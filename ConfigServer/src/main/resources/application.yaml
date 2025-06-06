@@ -1,0 +1,21 @@
+server:
+  port: 9296
+
+spring:
+  application:
+    name: Config-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/naveendevarala98/ecommerce-config.git
+          clone-on-start: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultzone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
